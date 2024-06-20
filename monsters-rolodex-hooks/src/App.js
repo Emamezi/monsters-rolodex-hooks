@@ -3,11 +3,9 @@ import "./App.css";
 import SearchBox from "./components/search-box/search-box.component";
 import CardList from "./components/card-list/card-list.component";
 const App = () => {
-  console.log("render");
   const [searchField, setSearchField] = useState("");
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilterMonsters] = useState(monsters);
-  console.log(searchField);
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLowerCase();
@@ -16,7 +14,6 @@ const App = () => {
 
   useEffect(
     () => {
-      console.log("useEffect fired");
       //effect we want to happen inside of our functional component
       fetch("https://jsonplaceholder.typicode.com/users")
         .then((res) => res.json())
